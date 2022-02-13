@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <!-- Authentication for the app -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyB_gLZMBs4mP7SBOrG4WiD_TUYG1-HoXXc",
+      authDomain: "bec-transcriptions.firebaseapp.com",
+    };
+    firebase.initializeApp(config);
+  </script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- <script src="../static/script.js"></script> -->
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- For Uploading new audio files -->
+<input type="file" id="upload" onfocus="this.blur()" />
+
+<audio controls id="audioElement" onfocus="this.blur()">
+  <source src="" type="audio/mpeg" id="src">
+</audio>
+
+ <!-- Paragraph for transcribed text -->
+ <br>
+ <br>
+ <br>
+ <span style="float:left;">Transcription:</span>
+ <textarea id="text" autofocus=true onblur="this.focus()"></textarea>
+ 
+ <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
